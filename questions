@@ -1,0 +1,46 @@
+Install a RHEL 8 VM using
+    - 20GiB disk
+        - 500MiB XFS formatted partition mounted on /boot
+        - a 10GiB XFS formatted logical volume mounted on /
+        - 1GiB logical volume used as swap space
+    - Installed as server with GUI
+    - Set the time zone and NTP to true
+    - Set server name to server1.exmaple.com
+    - Set root password to 'password'
+    - Create a sudent account with password set to 'password'
+    - Network to DHCP
+
+Repeate the proceedure from step one
+    - Set hostname to server2.example.com
+    - Set DHCP
+    - Install with minimal installation pattern
+
+use approprate tools to find the command that you can use to set the system time 1 minute ahead
+    man [-k|-f], mandb, pinfo
+
+modify shell env so that on every subshell that is started the variable COLOUR is set to 'red'
+
+from you home dir, type 'ls -al asdasd' and ensure that errors as well as regular output are redirected to a file with the name /temp/lsoutput
+
+use df options to print the information about the file systems in human readable and with file system type
+    df -hT
+
+copy all file from the /etc directory starting with a-e to /$HOME/test
+create a sybolic link to test named link-to-test in your home dir
+remove the symbolic link without deleting the files in test
+    cp /etc/[a-e]* ~/test
+    ln -s test link-to-test
+    rm link-to-test
+        (not rm -rf link-to-test)
+recreate the sybolic link and use rm -rf link-to-test and see what happens to files in test
+create hard link to /etc/hosts in your home dir
+use the ls command options to display the number of hard links to the /etc/hosts file, run this command on the file in the home dir and in the etc dir and compare the output
+
+log in as root, create on archive file that contains the contents of the /home and /etc dirs. use the name /root/essentials.tar for the archive file
+copy the archive to the /tmp dir and create a hard link in / 
+rename /essentials.tar to /archive.tar
+in the home dir of the root user create a sym link that refers to /archive.tar, use the name link.tar
+remove /archive.tar and see what happens to the symbolic link
+
+compress /root/essentials.tar
+
